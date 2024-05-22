@@ -1,0 +1,20 @@
+<div>
+    <form [formGroup]="filterFrm" id="mov-filter">
+        <p class="heading">Filters</p>
+        <span class="ctrl">
+            <label>Title</label>
+            <input type="text" formControlName="title" (input)="filterMovies()" />
+        </span>
+        <span class="ctrl">
+            <label>Release Year</label>
+            <input type="text" formControlName="releaseYr" (input)="filterMovies()" />
+        </span>
+    </form>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let movie of fMovies">
+            <app-movie-list [movie]="movie"></app-movie-list>
+        </li>
+    </ul>
+</div>

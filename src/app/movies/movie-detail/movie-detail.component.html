@@ -1,0 +1,29 @@
+<div>
+    <a class="back-btn" routerLink="/movies">Back</a>
+</div>
+
+<section>
+    <h2 class="title">{{movie.title}}</h2>
+    <div class="row">
+        <div class="col-md-4"><img [src]="movie.poster" /></div>
+        <div class="col-md-8">
+            <p><span style="font-weight:bold;">Summary: </span>{{movie.summary}}</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <p class="details-sec">Details</p>
+    <div class="grid">
+        <div class="grid-col-head">Box Office</div>
+        <div class="grid-col">${{movie.box_office}} million</div>
+        <div class="grid-col-head">Budget</div>
+        <div class="grid-col">{{movie.budget | currency:'USD':'symbol':'1.0-0'}} million</div>
+        <div class="grid-col-head">Duration</div>
+        <div class="grid-col">{{movie.duration | duration}}</div>
+        <div class="grid-col-head">Producers</div>
+        <div class="grid-col">{{movie.producers.join(', ')}}</div>
+        <div class="grid-col-head">Cinematographers</div>
+        <div class="grid-col">{{movie.cinematographers.join(', ')}}</div>
+    </div>
+</section>

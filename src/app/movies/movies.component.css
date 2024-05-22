@@ -1,0 +1,17 @@
+#mov-filter {
+    background: #808B96;
+
+    .heading {
+        font-weight: bold;
+    }
+
+    input[type=text] {
+        background: #ABB2B9;
+        color: #000;
+        border: none;
+    }
+
+    input[type=text]:focus {
+        border: 1px solid #566573;
+    }
+}

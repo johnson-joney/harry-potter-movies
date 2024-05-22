@@ -1,0 +1,18 @@
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.other span {
+    margin-right: 25px;
+    font-size: 14px;
+}
+
+.movie-dtls-btn-cell {
+    text-align: right;
+}
+
+.mov-detail-btn {
+    background: #808B96;
+    color: #000;
+}
