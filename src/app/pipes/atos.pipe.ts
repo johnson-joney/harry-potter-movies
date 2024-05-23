@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AtosPipe implements PipeTransform {
 
-  transform(value: Array<any>, separator: string = ','): string {
+  transform(value: Array<string>, separator: string = ','): string {
     return value?.join(`${separator} `);
   }
 
