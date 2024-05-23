@@ -4,16 +4,16 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Movie } from '../../models/movie';
 import { CommonModule } from '@angular/common';
 import { DurationPipe } from '../../pipes/duration.pipe';
+import { AtosPipe } from '../../pipes/atos.pipe';
 
 @Component({
   selector: 'app-movie-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule, DurationPipe],
+  imports: [CommonModule, RouterModule, DurationPipe, AtosPipe],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.css'
 })
-export class MovieDetailComponent implements OnInit{
-  @Input() movieId: any;
+export class MovieDetailComponent implements OnInit {
   movie: Movie;
   id: string;
 
@@ -25,12 +25,12 @@ export class MovieDetailComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe({
       next: (params) => {
-        if(params.get('id')) {
+        if (params.get('id')) {
           this.id = <string>params.get('id');
-          this.movieApiService.get(this.id).subscribe((movie) => {this.movie = movie; console.log(this.movie)});
+          this.movieApiService.get(this.id).subscribe((movie) => { this.movie = movie; });
         }
       }
     })
-    
-  }  
+
+  }
 }
